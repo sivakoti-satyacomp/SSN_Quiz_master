@@ -1,0 +1,20 @@
+{% extends "user_navbar.html" %}
+<!--User upcoming quizzes-->
+{%block user_navbar %}
+<div class="card text-center">
+  <div class="card-header">
+    Upcoming Quizzes
+  </div>
+  <div class="card-body">
+    <table class="centered-table">
+    <tr><th>ID</th><th>Subject</th><th>Chapter</th><th>No.of questions</th><th>Date</th><th>Time limit(hh:mm)</th><th>Action</th></tr>
+    <tr><td>1</td><td>Physics</td><td>Force</td><td>10</td><td>xx/xx/xxxx</td><td>xx:xx</td><td>View/Start</td></tr>
+    <tr><td>2</td><td>Chemistry</td><td>Fluids</td><td>15</td><td>xx/xx/xxxx</td><td>xx:xx</td><td>View/Start</td></tr>
+</table>
+  </div>
+  <div class="card-footer fg-2">
+    All the best!!
+  </div>
+</div>
+<!--end-->
+{% endblock %}

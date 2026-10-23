@@ -1,0 +1,31 @@
+.panel{
+    margin: auto;
+    border: 2px solid rgb(172, 172, 223);
+    height: auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.center-div{
+    text-align: center;
+    margin: auto;
+    color: rgb(55, 117, 233);
+}
+
+.card-table table,
+.card-table th,
+.card-table td
+{
+    border: 1px solid white;
+    text-align: left;
+    font-size: 12px;
+}
+
+.centered-table table,
+.centered-table th,
+.centered-table td
+{
+    border: 1px solid white;
+    text-align: left;
+    font-size: 14px;
+}
