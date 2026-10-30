@@ -1,0 +1,45 @@
+{% extends "admin_navbar.html" %}
+{%block admin_navbar%}
+    <div align="center">
+    <form action="/signup" method="POST">
+    <div>Add Quiz</div>
+    <div>
+    <table>
+        <tr><td><input type="text" class="form-control" name="title" placeholder="Title"></td></tr>
+        <tr><td><input type="text" class="form-control" name="description" placeholder="Description"></td></tr>
+        <tr><td>
+            <div class="form-field">
+                <input class="radio" name="options" type="radio" id="opt1" />
+                <input type="text" class="form-control" name="opt_1" placeholder="Option 1">
+            </div>
+        </td></tr>
+        <tr><td>
+            <div class="form-field">
+                <input class="radio" name="options" type="radio" id="opt2" />
+                <input type="text" class="form-control" name="opt_2" placeholder="Option 2">
+            </div>
+        </td></tr>
+        <tr><td>
+            <div class="form-field">
+                <input class="radio" name="options" type="radio" id="opt3" />
+                <input type="text" class="form-control" name="opt_3" placeholder="Option 3">
+            </div>
+        </td></tr>
+        <tr><td>
+            <div class="form-field">
+                <input class="radio" name="options" type="radio" id="opt4" />
+                <input type="text" class="form-control" name="opt_4" placeholder="Option 4">
+            </div>
+        </td></tr>
+        <tr><td align="center"><button type="submit" class="btn-solid theme-primary">Save</button> <a href="/admin" class="btn-solid theme-primary">Close</a></td></tr>
+    </table>
+    </div>
+    </form>
+    </div>
+{% endblock %}
+
+
+<div class="form-field">
+  <input class="radio" name="radios" type="radio" id="radioLabel2" />
+  <label for="radioLabel2">Second example radio</label>
+</div>

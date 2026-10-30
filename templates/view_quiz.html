@@ -1,0 +1,25 @@
+{% extends "admin_navbar.html" %}
+{%block admin_navbar%}
+    <div align="center">
+    <form action="/quiz/view" method="POST">
+    <div>View Quiz</div>
+    <div>
+    <table>
+        <tr><td><input type="text" class="form-control" name="subject_title" placeholder="subject title" readonly></td></tr>
+        <tr><td><input type="text" class="form-control" name="chapter_title" placeholder="chapter title" readonly></td></tr>
+        <tr><td><input type="text" class="form-control" name="quiz" placeholder="quiz title" readonly></td></tr>
+        <tr><td><input type="text" class="form-control" name="noq" placeholder="no.of questions" readonly></td></tr>
+        <tr><td><input type="text" class="form-control" name="date" placeholder="quiz date" readonly></td></tr>
+        <tr><td><input type="text" class="form-control" name="time" placeholder="time limit" readonly></td></tr>
+        <tr><td align="center"><button type="submit" class="btn-solid theme-primary">Start Quiz</button> <a href="/user" class="btn-solid theme-primary">Close</a></td></tr>
+    </table>
+    </div>
+    </form>
+    </div>
+{% endblock %}
+
+
+<div class="form-field">
+  <input class="radio" name="radios" type="radio" id="radioLabel2" />
+  <label for="radioLabel2">Second example radio</label>
+</div>

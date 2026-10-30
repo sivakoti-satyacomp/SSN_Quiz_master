@@ -8,12 +8,12 @@
 </head>
 <body>
 <div align="center">
-    <form>
+    <form action="/login" method="POST">
     <div>Signin</div>
     <div>
     <table>
-        <tr><td><input type="email" class="form-control" id="uname" aria-describedby="emailHelp" placeholder="example@domain.com"></td></tr>
-        <tr><td><input type="password" class="form-control" id="password" placeholder="Password"></td></tr>
+        <tr><td><input type="email" class="form-control" name="uname" aria-describedby="emailHelp" placeholder="example@domain.com"></td></tr>
+        <tr><td><input type="password" class="form-control" name="password" placeholder="Password"></td></tr>
         <tr><td align="center"><button type="submit" class="btn-solid theme-primary">Login</button></td></tr>
         <tr><td align="center">New user? <a href="signup.html">Signup</a></td></tr>
     </table>

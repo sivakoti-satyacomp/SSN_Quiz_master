@@ -1,0 +1,15 @@
+{% extends "admin_navbar.html" %}
+{%block admin_navbar%}
+    <div align="center">
+    <form action="/signup" method="POST">
+    <div>Add Subject</div>
+    <div>
+    <table>
+        <tr><td><input type="text" class="form-control" name="title" placeholder="Subject title"></td></tr>
+        <tr><td><input type="text" class="form-control" name="description" placeholder="Description"></td></tr>
+        <tr><td align="center"><button type="submit" class="btn-solid theme-primary">Save</button> <a href="/admin" class="btn-solid theme-primary">Close</a></td></tr>
+    </table>
+    </div>
+    </form>
+    </div>
+{% endblock %}
