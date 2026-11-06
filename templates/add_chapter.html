@@ -1,13 +1,13 @@
 {% extends "admin_navbar.html" %}
 {%block admin_navbar%}
     <div align="center">
-    <form action="/signup" method="POST">
+    <form action="{{url_for('add_chapter',user_id=user.id,sub_id=subject.id)}} method="POST">
     <div>Add Chapter</div>
     <div>
     <table>
         <tr><td><input type="text" class="form-control" name="title" placeholder="Chapter title"></td></tr>
         <tr><td><input type="text" class="form-control" name="description" placeholder="Description"></td></tr>
-        <tr><td align="center"><button type="submit" class="btn-solid theme-primary">Save</button> <a href="/admin" class="btn-solid theme-primary">Close</a></td></tr>
+        <tr><td align="center"><button type="submit" class="btn-solid theme-primary">Save</button> <a href="{{url_for('admin_dashboard',user_id=user.id)}}" class="btn-solid theme-primary">Close</a></td></tr>
     </table>
     </div>
     </form>
