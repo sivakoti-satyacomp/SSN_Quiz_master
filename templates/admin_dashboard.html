@@ -2,30 +2,35 @@
 {%block admin_navbar%}
 <!--Subjects card-->
 {% if subjects %}
+<div class="grid text-center grid-auto-flow-row" style="--bs-columns: 3;">
 {% for subject in subjects %}
-<div class="card" style="max-width: 320px;">
-  <div class="card-body">
+    <div class="card" style="max-width: 320px;">
+    <div class="card-body">
     <h4 class="card-title">{{subject.title}}</h4>
+    <h6><a href="{{url_for('edit_subject',user_id=user.id,sub_id=subject.id)}}"><img src="/static/images/pen.png" width="20" height="20" title="Edit"></a> <a href="{{url_for('delete_subject',user_id=user.id,sub_id=subject.id)}}"><img src="/static/images/bin.png" width="20" height="20" title="Delete"></a></h6>
     <p class="card-subtitle fg-3">{{subject.desription}}</p>
     <!--table-->
-    <table class="card-table"></table>
+    <table class="card-table">
     {% if subject.chapters %}
-      <tr><th>Chapter</th><th>No.of Questions</th><th>Actions</th></tr>
+      <tr><th>Chapter</th><th>Actions</th></tr>
       {% for chapter in subject.chapters %}
-        <tr><td>chapter.title</td><td>Edit/Delete</td></tr>
+        <tr><td>{{chapter.title}}</td><td><a href="{{url_for('edit_chapter',user_id=user.id,chapter_id=chapter.id)}}">Edit</a>|<a href="{{url_for('delete_chapter',user_id=user.id,chapter_id=chapter.id)}}">Delete</a></td></tr>
       {% endfor %}
     {%else%}
       <tr><td colspan="2">No chapters existed!</td></tr>
     {%endif%}
     </table>
-
     <a href="{{url_for('add_chapter',user_id=user.id,sub_id=subject.id)}}" class="btn-outline theme-success">+Add Chapter</a>
   </div>
 </div>
 {%endfor%}
+</div>
 {%else%}
 <p class="h3">No subjects available</p>
 {%endif%}
-<div class="center-div"> <a href="{{url_for('add_subject',user_id=user.id)}}" class="btn-solid theme-primary">+Add Subject</a></div>
 <!--end of subjects-->
+<br>
+<div class="center-div"> 
+  <a href="{{url_for('add_subject',user_id=user.id)}}" class="btn-solid theme-primary">+Add Subject</a>
+</div>
 {%endblock%}

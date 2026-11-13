@@ -7,8 +7,9 @@
 }
 
 .center-div{
-    text-align: center;
-    margin: auto;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
     color: rgb(55, 117, 233);
 }
 

@@ -1,0 +1,56 @@
+{% extends "admin_navbar.html" %}
+{% block admin_navbar %}
+
+{% if quizzes %}
+<div class="grid text-center grid-auto-flow-row" style="--bs-columns: 3;">
+
+    {% for quiz in quizzes %}
+    <div class="card" style="max-width: 320px;">
+        <div class="card-body">
+            <h4 class="card-title">{{ quiz.title }}</h4>
+            <p class="card-subtitle fg-3">{{ quiz.description }}</p>
+            <table class="card-table">
+                {% if quiz.questions %}
+                    <tr>
+                        <th>Question Title</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for question in quiz.questions %}
+                    <tr>
+                        <td>{{ question.title }}</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="2">No questions exist!</td>
+                    </tr>
+                {% endif %}
+            </table>
+            <a href="{{ url_for('add_question',
+                                user_id=user.id,
+                                quiz_id=quiz.id) }}"
+               class="btn-outline theme-success">
+                + Add Question
+            </a>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% else %}
+    <p class="h3">No Quizzes available</p>
+{% endif %}
+
+<br>
+<div class="center-div">
+    <a href="{{ url_for('add_quiz', user_id=user.id) }}"
+       class="btn-solid theme-primary">
+        + Add Quiz
+    </a>
+</div>
+{% endblock %}

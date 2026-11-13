@@ -14,10 +14,10 @@
       <div class="drawer-body mb-2 md:mb-0">
         <ul class="nav navbar-nav me-auto">
           <li class="nav-item">
-            <a class="btn-text theme-primary" href="#">Home</a>
+            <a class="btn-text theme-primary" href="{{url_for('admin_dashboard',user_id=user.id)}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="btn-text theme-primary" href="#">Quiz</a>
+            <a class="btn-text theme-primary" href="{{url_for('manage_quizzes',user_id=user.id)}}">Quiz</a>
           </li>
           <li class="nav-item">
             <a class="btn-text theme-primary" href="#">User</a>
